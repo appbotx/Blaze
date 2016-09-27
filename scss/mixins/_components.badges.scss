@@ -13,6 +13,7 @@
   font-size: $badge-font-size;
   font-weight: $badge-font-weight;
   border-radius: $badge-border-radius;
+  text-transform: uppercase;
 }
 
 @mixin badge--primary {
