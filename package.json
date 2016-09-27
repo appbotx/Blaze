@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "build": "gulp",
-    "test": "percy snapshot demo"
+    "test": "percy snapshot demo",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,8 @@
     "gulp-rename": "~1.2.2",
     "gulp-sass": "~2.3.2",
     "gulp-size": "^2.1.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.10",
     "minimist": "^1.2.0",
     "np": "^2.5.0",
     "run-sequence": "^1.2.1"

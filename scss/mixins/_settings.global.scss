@@ -25,7 +25,7 @@ $screen-limits: (
 $spacing-tiny: .1em !default;
 $spacing-xsmall: .3em !default;
 $spacing-small: .5em !default;
-$spacing-medium: 1em !default;
+$spacing-medium: 0.8em !default;
 $spacing-large: 1.5em !default;
 $spacing-xlarge: 2em !default;
 $spacing-super: 3em !default;
@@ -65,14 +65,11 @@ $grid-widths: (
 $color-black: #111111 !default;
 $color-white: #FFFFFF !default;
 $color-beige: #F2F2EA !default;
-$color-red: #EF4F52 !default;
-$color-pink: #EC65C3 !default;
-$color-purple: #AB47BC !default;
-$color-blue: #42A5F5 !default;
-$color-green: #66BB6A !default;
+$color-red: #E25E4D !default;
+$color-blue: #0391E6 !default;
+$color-green: #1AB06E !default;
 $color-yellow: #F6ED30 !default;
-$color-orange: #FF7043 !default;
-$color-brown: #8D6E63 !default;
+$color-orange: #FFAD26 !default;
 $color-grey: lighten($color-black, 70) !default;
 
 $color-tint: 9 !default;
@@ -83,43 +80,31 @@ $color-tint-lighter: $color-tint * 2 !default;
 
 $color-dark-grey: darken($color-grey, $color-tint-dark);
 $color-dark-red: darken($color-red, $color-tint-dark);
-$color-dark-pink: darken($color-pink, $color-tint-dark);
-$color-dark-purple: darken($color-purple, $color-tint-dark);
 $color-dark-blue: darken($color-blue, $color-tint-dark);
 $color-dark-green: darken($color-green, $color-tint-dark);
 $color-dark-yellow: darken($color-yellow, $color-tint-dark);
 $color-dark-orange: darken($color-orange, $color-tint-dark);
-$color-dark-brown: darken($color-brown, $color-tint-dark);
 
 $color-darker-grey: darken($color-grey, $color-tint-darker);
 $color-darker-red: darken($color-red, $color-tint-darker);
-$color-darker-pink: darken($color-pink, $color-tint-darker);
-$color-darker-purple: darken($color-purple, $color-tint-darker);
 $color-darker-blue: darken($color-blue, $color-tint-darker);
 $color-darker-green: darken($color-green, $color-tint-darker);
 $color-darker-yellow: darken($color-yellow, $color-tint-darker);
 $color-darker-orange: darken($color-orange, $color-tint-darker);
-$color-darker-brown: darken($color-brown, $color-tint-darker);
 
 $color-light-grey: lighten($color-grey, $color-tint-light);
 $color-light-red: lighten($color-red, $color-tint-light);
-$color-light-pink: lighten($color-pink, $color-tint-light);
-$color-light-purple: lighten($color-purple, $color-tint-light);
 $color-light-blue: lighten($color-blue, $color-tint-light);
 $color-light-green: lighten($color-green, $color-tint-light);
 $color-light-yellow: lighten($color-yellow, $color-tint-light);
 $color-light-orange: lighten($color-orange, $color-tint-light);
-$color-light-brown: lighten($color-brown, $color-tint-light);
 
 $color-lighter-grey: lighten($color-grey, $color-tint-lighter);
 $color-lighter-red: lighten($color-red, $color-tint-lighter);
-$color-lighter-pink: lighten($color-pink, $color-tint-lighter);
-$color-lighter-purple: lighten($color-purple, $color-tint-lighter);
 $color-lighter-blue: lighten($color-blue, $color-tint-lighter);
 $color-lighter-green: lighten($color-green, $color-tint-lighter);
 $color-lighter-yellow: lighten($color-yellow, $color-tint-lighter);
 $color-lighter-orange: lighten($color-orange, $color-tint-lighter);
-$color-lighter-brown: lighten($color-brown, $color-tint-lighter);
 
 $color-default: $color-dark-grey !default;
 $color-primary: $color-blue !default;
@@ -161,6 +146,7 @@ $border-color: $color-dark-grey !default;
 // Border radius
 //
 $border-radius: 4px !default;
+$border-radius-top: 0px 0px 4px 4px !default;
 $border-radius-rounded: 30em !default;
 
 //
@@ -194,7 +180,7 @@ $z-over-everything: 500 !default;
 //
 // Typography
 //
-$text-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !default;
+$text-font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
 $text-font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif !default;
 $text-font-family-mono: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace !default;
 $text-font-size-super: 3em !default;
@@ -262,14 +248,14 @@ $address-heading-font-weight: $text-font-weight-heavy !default;
 // Alerts
 //
 $alert-margin: 0 0 $spacing-medium 0 !default;
-$alert-padding: $spacing-medium $spacing-super $spacing-medium $spacing-medium !default;
+$alert-padding: $spacing-small $spacing-super $spacing-small $spacing-medium !default;
 $alert-background-color: $color-default !default;
 $alert-primary-background-color: $color-primary !default;
 $alert-secondary-background-color: $color-secondary !default;
 $alert-error-background-color: $color-error !default;
 $alert-success-background-color: $color-success !default;
 $alert-color: $color-white !default;
-$alert-border-radius: $border-radius !default;
+$alert-border-radius: $border-radius-top !default;
 
 //
 // Badges
@@ -640,7 +626,7 @@ $nav-color: $color-white !default;
 $nav-z-index: $z-over-page !default;
 
 $nav-light-background-color: $color-beige !default;
-$nav-light-color: $color-darker-brown !default;
+$nav-light-color: $color-darker-orange !default;
 
 $nav-item-padding: $spacing-medium !default;
 $nav-item-letter-spacing: 1px !default;
