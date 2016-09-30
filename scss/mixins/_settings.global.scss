@@ -62,21 +62,21 @@ $grid-widths: (
 //
 // Colors
 //
-$color-black: #111111 !default;
-$color-white: #FFFFFF !default;
-$color-beige: #F2F2EA !default;
+$color-black: #4A4A4A !default;
+$color-white: #FFFFFF !default; 
 $color-red: #E25E4D !default;
 $color-blue: #0391E6 !default;
 $color-green: #1AB06E !default;
 $color-yellow: #F6ED30 !default;
 $color-orange: #FFAD26 !default;
-$color-grey: lighten($color-black, 70) !default;
+$color-grey: #F7F7F7 !default;
+$color-altgrey: #E1E6EA !default;
 
-$color-tint: 9 !default;
+$color-tint: 4 !default;
 $color-tint-dark: $color-tint !default;
 $color-tint-darker: $color-tint * 2 !default;
 $color-tint-light: $color-tint !default;
-$color-tint-lighter: $color-tint * 2 !default;
+$color-tint-lighter: $color-tint * 10 !default;
 
 $color-dark-grey: darken($color-grey, $color-tint-dark);
 $color-dark-red: darken($color-red, $color-tint-dark);
@@ -92,6 +92,7 @@ $color-darker-green: darken($color-green, $color-tint-darker);
 $color-darker-yellow: darken($color-yellow, $color-tint-darker);
 $color-darker-orange: darken($color-orange, $color-tint-darker);
 
+$color-light-black: lighten($color-black, $color-tint-light);
 $color-light-grey: lighten($color-grey, $color-tint-light);
 $color-light-red: lighten($color-red, $color-tint-light);
 $color-light-blue: lighten($color-blue, $color-tint-light);
@@ -99,6 +100,7 @@ $color-light-green: lighten($color-green, $color-tint-light);
 $color-light-yellow: lighten($color-yellow, $color-tint-light);
 $color-light-orange: lighten($color-orange, $color-tint-light);
 
+$color-lighter-black: lighten($color-black, $color-tint-lighter);
 $color-lighter-grey: lighten($color-grey, $color-tint-lighter);
 $color-lighter-red: lighten($color-red, $color-tint-lighter);
 $color-lighter-blue: lighten($color-blue, $color-tint-lighter);
@@ -106,7 +108,7 @@ $color-lighter-green: lighten($color-green, $color-tint-lighter);
 $color-lighter-yellow: lighten($color-yellow, $color-tint-lighter);
 $color-lighter-orange: lighten($color-orange, $color-tint-lighter);
 
-$color-default: $color-dark-grey !default;
+$color-default: $color-grey !default;
 $color-primary: $color-blue !default;
 $color-secondary: $color-orange !default;
 $color-success: $color-green !default;
@@ -132,7 +134,7 @@ $color-darker-error: darken($color-dark-error, $color-tint-darker);
 $color-light-error: lighten($color-error, $color-tint-light);
 $color-lighter-error: lighten($color-light-error, $color-tint-lighter);
 
-$color-disabled: $color-dark-grey !default;
+$color-disabled: $color-lighter-black !default;
 $color-quiet: $color-dark-grey !default;
 
 //
@@ -140,12 +142,12 @@ $color-quiet: $color-dark-grey !default;
 //
 $border-width: 1px !default;
 $border-style: solid !default;
-$border-color: $color-dark-grey !default;
+$border-color: $color-darker-grey !default;
 
 //
 // Border radius
 //
-$border-radius: 4px !default;
+$border-radius: 2px !default;
 $border-radius-top: 0px 0px 4px 4px !default;
 $border-radius-rounded: 30em !default;
 
@@ -190,7 +192,7 @@ $text-font-size-medium: 1em !default;
 $text-font-size-small: 0.9em !default;
 $text-font-size-xsmall: 0.7em !default;
 $text-font-weight: normal !default;
-$text-font-weight-heavy: bold !default;
+$text-font-weight-heavy: 600 !default;
 $text-line-height: 1.55 !default;
 $text-color: $color-black !default;
 
@@ -254,7 +256,8 @@ $alert-primary-background-color: $color-primary !default;
 $alert-secondary-background-color: $color-secondary !default;
 $alert-error-background-color: $color-error !default;
 $alert-success-background-color: $color-success !default;
-$alert-color: $color-white !default;
+$alert-color: $color-black !default;
+$alert-color-white: $color-white !default;
 $alert-border-radius: $border-radius-top !default;
 
 //
@@ -263,7 +266,7 @@ $alert-border-radius: $border-radius-top !default;
 $badge-padding: $spacing-tiny $spacing-xsmall !default;
 $badge-margin: 0 !default;
 $badge-background-color: $color-default !default;
-$badge-color: $color-white !default;
+$badge-color: $color-black !default;
 $badge-primary-background-color: $color-primary !default;
 $badge-primary-color: $color-white !default;
 $badge-secondary-background-color: $color-secondary !default;
@@ -293,7 +296,10 @@ $bubble-arrow-width: 10px !default;
 $button-padding: $spacing-small !default;
 $button-margin: 0 !default;
 
-$button-color: $color-white !default;
+$button-color: $color-white $border-color !default;
+$button-color-dark: $color-black !default;
+$button-clean-color: $color-black !default;
+$button-clean-background-color: transparent !default;
 $button-background-color: $color-default !default;
 $button-primary-color: $color-white !default;
 $button-primary-background-color: $color-primary !default;
@@ -305,28 +311,32 @@ $button-error-color: $color-white !default;
 $button-error-background-color: $color-error !default;
 
 $button-disabled-color: $color-disabled !default;
-$button-disabled-background-color: $color-lighter-grey !default;
+$button-disabled-background-color: $color-grey !default;
 $button-disabled-border-color: $color-default !default;
 $button-disabled-font-style: italic !default;
 
-$button-font-family: inherit !default;
-$button-font-size: 1em !default;
+$button-font-family: "Open Sans" !default;
+$button-font-size: 13px !default;
 $button-line-height: normal !default;
 $button-text-align: center !default;
-$button-text-transform: uppercase !default;
+$button-text-transform: none !default;
 $button-white-space: nowrap !default;
 
 $button-border-width: $border-width !default;
 $button-border-style: $border-style !default;
-$button-border-color: transparent !default;
+$button-border-color: $color-altgrey !default;
 $button-border: $button-border-width $button-border-style $button-border-color !default;
+$button-border-primary: $button-border-width $button-border-style $color-primary !default;
+$button-border-secondary: $button-border-width $button-border-style $color-secondary !default;
+$button-border-success: $button-border-width $button-border-style $color-success !default;
+$button-border-error: $button-border-width $button-border-style $color-error !default;
 $button-border-radius: $border-radius !default;
 
-$button-focus-border-color: $border-color-focus !default;
+$button-focus-border-color: transparent !default;
 $button-focus-box-shadow: $box-shadow-focus !default;
 
-$button-ghost-color: $border-color !default;
-$button-ghost-hover-color: $color-white !default;
+$button-ghost-color: $color-white !default;
+$button-ghost-hover-color: $color-black !default;
 $button-ghost-primary-color: $color-primary !default;
 $button-ghost-primary-hover-color: $color-white !default;
 $button-ghost-secondary-color: $color-secondary !default;
@@ -342,6 +352,7 @@ $button-rounded-border-radius: $border-radius-rounded !default;
 
 $button-close-font-weight: $text-font-weight-heavy !default;
 $button-close-font-size: 1.4em !default;
+$button-close-border: none !default;
 
 $button-icon-left-padding: $spacing-small !default;
 $button-icon-right-padding: $spacing-small !default;
@@ -625,7 +636,7 @@ $nav-background-color: $color-black !default;
 $nav-color: $color-white !default;
 $nav-z-index: $z-over-page !default;
 
-$nav-light-background-color: $color-beige !default;
+$nav-light-background-color: $color-altgrey !default;
 $nav-light-color: $color-darker-orange !default;
 
 $nav-item-padding: $spacing-medium !default;

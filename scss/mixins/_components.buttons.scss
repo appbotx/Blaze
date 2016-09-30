@@ -1,18 +1,17 @@
 @import "settings.global";
 
-@mixin button--color($background-color: $button-background-color, $color: $button-color) {
+@mixin button--color($background-color: $button-background-color, $color: $button-color-dark) {
   background-color: $background-color;
-  color: $color;
+  color: $color; 
   border: $button-border;
 
   &:not(:disabled) {
     &:hover {
-      background-color: lighten($background-color, $color-tint);
+      background-color: darken($background-color, $color-tint);
     }
 
     &:focus {
-      border-color: $button-focus-border-color;
-      box-shadow: $button-focus-box-shadow;
+      outline: 0;
     }
 
     &:active {
@@ -21,10 +20,10 @@
   }
 }
 
-@mixin button--ghost($color: $button-ghost-color, $color-hover: $button-ghost-hover-color) {
+@mixin button--ghost($color: $button-border-color, $color-hover: $button-ghost-hover-color) {
   background-color: transparent;
   border: $button-ghost-border-width $button-ghost-border-style $color;
-  color: $color;
+  color: $color-black;
 
   &:not(:disabled) {
     &:hover {
@@ -33,8 +32,7 @@
     }
 
     &:focus {
-      border-color: $button-focus-border-color;
-      box-shadow: $button-focus-box-shadow;
+      outline: 0;
     }
 
     &:active {
@@ -46,7 +44,6 @@
 }
 
 @mixin button {
-  outline: 0;
   display: inline;
   max-width: 100%;
   padding: $button-padding;
@@ -56,6 +53,7 @@
   font-family: $button-font-family;
   text-align: $button-text-align;
   text-transform: $button-text-transform;
+  font-weight: $text-font-weight-heavy;
   text-decoration: none;
   line-height: $button-line-height;
   overflow: hidden;
@@ -76,36 +74,49 @@
   }
 }
 
+@mixin button--clean {
+  @include button--color($button-clean-background-color, $button-clean-color);
+  border: none;
+}
+
 @mixin button--primary {
   @include button--color($button-primary-background-color, $button-primary-color);
+  border: $button-border-primary;
 }
 
 @mixin button--secondary {
   @include button--color($button-secondary-background-color, $button-secondary-color);
+  border: $button-border-secondary;
 }
 
 @mixin button--success {
   @include button--color($button-success-background-color, $button-success-color);
+  border: $button-border-success;
 }
 
 @mixin button--error {
   @include button--color($button-error-background-color, $button-error-color);
+  border: $button-border-error;
 }
 
 @mixin button--ghost-primary {
   @include button--ghost($button-ghost-primary-color, $button-ghost-primary-hover-color);
+  color: $color-primary;
 }
 
 @mixin button--ghost-secondary {
   @include button--ghost($button-ghost-secondary-color, $button-ghost-secondary-hover-color);
+  color: $color-secondary;
 }
 
 @mixin button--ghost-success {
   @include button--ghost($button-ghost-success-color, $button-ghost-success-hover-color);
+  color: $color-success;
 }
 
 @mixin button--ghost-error {
   @include button--ghost($button-ghost-error-color, $button-ghost-error-hover-color);
+  color: $color-error;
 }
 
 @mixin button--rounded {
@@ -119,6 +130,7 @@
   right: $spacing-small;
   font-size: $button-close-font-size;
   font-weight: $button-close-font-weight;
+  border: $button-close-border;
   line-height: 1;
   padding: 0;
 }
